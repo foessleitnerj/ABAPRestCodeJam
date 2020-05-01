@@ -9,7 +9,6 @@ abc
 
 ## Übungen
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - Aufwärmübung
-* [Maven](https://maven.apache.org/) - ABAP RESTful Programming Model - Unmanaged
-* [ROME](https://rometools.github.io/rome/) - ABAP RESTful Programming Model - Unmanaged
-test
+* [Aufwärmübung](http://www.dropwizard.io/1.0.2/docs/) 
+* [ABAP RESTful Programming Model - Unmanaged](https://maven.apache.org/) 
+* [ABAP RESTful Programming Model - Managed](https://rometools.github.io/rome/) 

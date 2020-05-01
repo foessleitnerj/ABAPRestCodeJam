@@ -9,7 +9,7 @@ abc
 
 ## Übungen
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - Aufwärmübung
+* [Maven](https://maven.apache.org/) - ABAP RESTful Programming Model - Unmanaged
+* [ROME](https://rometools.github.io/rome/) - ABAP RESTful Programming Model - Unmanaged
 test

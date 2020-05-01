@@ -1,4 +1,4 @@
-# ABAPRestCodeJam
+# Cadaxo ABAPRest Virtual CodeJam
 Übungen für eine ca. 3 stündige ABAPRest CodeJam
 
 ## Überblick

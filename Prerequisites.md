@@ -1,5 +1,3 @@
-# Prerequisits
-
 ## Software
 Für diese Codejam werden die [ABAP Development Tools](https://tools.hana.ondemand.com/#abap) benötigt. Sollte ADT bereits installiert sein, bitte prüfen dass die aktuellste Version vorhanden ist. Weiters benötigen wir Zugriff auf ein ABAP in the Cloud Trialsystem. 
 

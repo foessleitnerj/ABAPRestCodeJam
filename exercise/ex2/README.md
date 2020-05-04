@@ -23,4 +23,27 @@ response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Ti
 
 ## Übung 2.2. Optinal für die Schnellen und Streber
 Jetzt machen wir etwas mehr Logik in der HTTP Klasse. Wir werden einen URL Parameter verwenden
-1. x 
+1. Dem HTTP Call soll der Parameter **command** mitgegeben werden können
+   - Wenn eav übergeben wird, soll der Text aus Übung 2.1 übergeben werden
+   - Wenn user übergeben wird, soll der aktuelle User ausgegeben werden
+   - In allen anderen Fällen soll ein HTTP 400 Error zurückgeliefert werden
+2. Versuche die Lösung selber zu finden oder ... kopier nachfolgendes Coding in the Methode
+```
+    DATA(lt_params) = request->get_form_fields(  ).
+    READ TABLE lt_params REFERENCE INTO DATA(lr_params) WITH KEY name = 'command'.
+    IF sy-subrc <> 0.
+      response->set_status( i_code = 400
+                            i_reason = 'Bad request').
+      RETURN.
+    ENDIF.
+
+    CASE lr_params->value.
+      WHEN `eav`.
+        response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Tirili, tirilo, tirila| ).
+      WHEN `user`.
+        response->set_text( |{ sy-uname }| ).
+      WHEN OTHERS.
+        response->set_status( i_code = 400
+                              i_reason = 'Bad request').
+    ENDCASE.
+```

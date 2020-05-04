@@ -24,8 +24,8 @@ response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Ti
 ## Übung 2.2. Optinal für die Schnellen und Streber
 Jetzt machen wir etwas mehr Logik in der HTTP Klasse. Wir werden einen URL Parameter verwenden
 1. Dem HTTP Call soll der Parameter **command** mitgegeben werden können
-   - Wenn eav übergeben wird, soll der Text aus Übung 2.1 übergeben werden
-   - Wenn user übergeben wird, soll der aktuelle User ausgegeben werden
+   - Wenn **eav** übergeben wird, soll der Text aus Übung 2.1 übergeben werden
+   - Wenn **user** übergeben wird, soll der aktuelle User ausgegeben werden
    - In allen anderen Fällen soll ein HTTP 400 Error zurückgeliefert werden
 2. Versuche die Lösung selber zu finden oder ... kopier nachfolgendes Coding in the Methode
 ```

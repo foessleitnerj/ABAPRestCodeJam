@@ -1,4 +1,4 @@
-# Los gehts!
+# Los gehts! - Übung 1
 Als erstes werden wir uns ein eigenes Paket anlegen. Bitte ersetzte alle XXX durch deine Gruppennummer.
 1. Verbinde dich mit dem ABAP Trial System
 2. Füge das Paket **ZLOCAL** zu deinen Favorite Packages hinzu. - Rechte Maus auf **Favorite Packages**, dann **Add Package**.

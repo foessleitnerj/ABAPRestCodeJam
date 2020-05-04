@@ -7,4 +7,4 @@ Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klas
    - Connectivity -> HTTP Service
    - Der Name der Handlerklasse wird vorgeschlagen. Lasse ihn wie er ist
 
-![HTTPService](images/exc_1_2.png?raw=true "HTTP Service")
+   ![HTTPService](images/exc_1_2.png?raw=true "HTTP Service")

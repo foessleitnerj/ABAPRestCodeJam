@@ -11,7 +11,7 @@ Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klas
 2. Navigiere zu der generierten HTTP Handlerklasse Z_CDX_HELLO_WORLD_XXX
    - Wie Du siehst, wurde das Interface **IF_HTTP_SERVICE_EXTENSION** bereits ergänzt
    - Ebenso ist bereits eine leere Implementierung der Method **HANDLE_REQUEST** vorhanden
-3. Ergänze folgenden Code in tie Methode
+3. Ergänze folgenden Code in der Methode
 ```
 response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Tirili, tirilo, tirila| ).
 ```

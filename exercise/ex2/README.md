@@ -20,3 +20,6 @@ response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Ti
 5. Jetzt sollte eigentlich der Browser aufgehen
 
 ![HTTPService](images/exc_2_3.png?raw=true "HTTP Service")
+
+## Optinal für die Schnellen und Streber
+6. 

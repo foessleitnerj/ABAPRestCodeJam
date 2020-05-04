@@ -6,4 +6,5 @@ Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klas
    - Rechte Maus im bei Paket Z_CDX_XXX -> New -> Other ABAP Repository Object
    - Connectivity -> HTTP Service
    - Der Name der Handlerklasse wird vorgeschlagen. Lasse ihn wie er ist
+
 ![HTTPService](images/exc_1_2.png?raw=true "HTTP Service")

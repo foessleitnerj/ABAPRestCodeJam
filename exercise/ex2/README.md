@@ -13,5 +13,5 @@ Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klas
    - Ebenso ist bereits eine leere Implementierung der Method **HANDLE_REQUEST** vorhanden
 3. Ergänze folgenden Code in tie Methode
 ```
-response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Tirili, tirilo, tirila| )
+response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Tirili, tirilo, tirila| ).
 ```

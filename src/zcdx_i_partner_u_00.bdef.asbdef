@@ -1,0 +1,20 @@
+unmanaged; // implementation in class zbp_cdx_i_partner_u_00 unique;
+
+define behavior for ZCDX_I_PARTNER_U_00 alias partner
+implementation in class zcdx_partner_api_00 unique
+//lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( read only ) partner;
+  field ( mandatory ) name;
+
+  create;
+  update;
+  delete;
+
+  // actions
+  // associations
+  // mapping
+}

@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'partner', 
+                     typeNamePlural: 'Partner', 
+                     title: { type: #STANDARD, 
+                              value: 'name' } } }
+
+annotate view ZCDX_C_PARTNER_U_00
+    with 
+{
+  @UI.facet: [ { id:            'partner',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Partner',
+                 position:      10 }]
+                 
+  @UI: { lineItem:       [ { position: 5 } ], 
+         identification: [ { position: 5 } ], 
+         selectionField: [ { position: 5 } ] }                 
+    partner;
+
+  @UI: { lineItem:       [ { position: 10 } ], 
+         identification: [ { position: 10 } ], 
+         selectionField: [ { position: 10 } ] }
+    name;
+    
+  @UI: { lineItem:       [ { position: 20 } ], 
+         identification: [ { position: 20 } ], 
+         selectionField: [ { position: 20 } ] }    
+    country;
+    
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Partner'
+define service ZCDX_SD_PARTNER_U_00 {
+  expose ZCDX_C_PARTNER_U_00;
+}

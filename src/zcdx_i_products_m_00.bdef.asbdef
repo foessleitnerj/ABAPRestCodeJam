@@ -1,0 +1,12 @@
+managed; // implementation in class zbp_cdx_i_products_m_00 unique;
+
+define behavior for ZCDX_I_PRODUCTS_M_00 alias products
+persistent table ZCDX_PRODUCTS_00
+lock master
+//authorization master ( instance )
+etag master last_changed_at
+{
+  create;
+  update;
+  delete;
+}

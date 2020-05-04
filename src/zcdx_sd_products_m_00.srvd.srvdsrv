@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Products'
+define service ZCDX_SD_PRODUCTS_M_00 {
+  expose ZCDX_C_PRODUCTS_M_00;
+}

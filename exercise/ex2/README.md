@@ -16,3 +16,4 @@ Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klas
 response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Tirili, tirilo, tirila| ).
 ```
 4. Zurück zum HTTP Service und auf die URL klicken
+   ![HTTPService](images/exc_2_2.png?raw=true "HTTP Service")

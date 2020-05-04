@@ -49,3 +49,6 @@ Jetzt machen wir etwas mehr Logik in der HTTP Klasse. Wir werden einen URL Param
 ```
 3. Ein neuer Test mit der gleichen URL (ohne den command zusatz) müsste zu einem HTTP 400 Error führen
 4. Einfach bei der URL ein &command=eav oder &command=user anhängen und schon sollte es funktioniere
+![HTTPService](images/exc_2_4.png?raw=true "HTTP Service")
+# Test
+test

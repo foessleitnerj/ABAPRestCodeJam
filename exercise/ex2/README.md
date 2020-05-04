@@ -17,3 +17,6 @@ response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Ti
 ```
 4. Zurück zum HTTP Service und auf die URL klicken
    ![HTTPService](images/exc_2_2.png?raw=true "HTTP Service")
+5. Jetzt sollte eigentlich der Browser aufgehen
+
+![HTTPService](images/exc_2_3.png?raw=true "HTTP Service")

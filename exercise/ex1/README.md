@@ -4,4 +4,4 @@ Als erstes werden wir uns ein eigenes Paket anlegen. Bitte ersetzte alle XXX dur
 2. Füge das Paket **ZLOCAL** zu deinen Favorite Packages hinzu. - Rechte Maus auf **Favorite Packages**, dann **Add Package**.
 3. Erstelle das neue Paket **Z_CDX_XXX** unter **ZLOCAL**. Verwende Software Component **ZLOCAL**
 # Summary
-Perfect! Alle Vorbereitungen sind erledigt, jetzt kann es losgehen!
+Perfekt! Alle Vorbereitungen sind erledigt, jetzt kann es losgehen!

@@ -86,7 +86,8 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 9. Die Klasse wird angelegt und der Reiter "Locale Types" wird eingeblendet und sollte wie nachfolgend aussehen.
 ![BehaviorImplementation](images/exc_3_2.png?raw=true "Behavior Implementation")
 10. BITTE NICHT FRAGEN WIESO die Methoden als locale Klasse/Methoden abgebildet wurden. Auch Thomas Jung und Rich Heilman fanden keine Erklärung. Außer, dass es technische Notwendigkeiten gibt.
-11. Nachfolgenden Code in die Implementierung von CREATE einfügen.
+11. Nachfolgenden Code in die Implementierung von CREATE einfügen. Die anzulegenden Orders sind im Methodenparameter ENTITIES enthalten.
+    - Es können natürlich auch Messages aus dem FUBA Call zurückgeliefert werden. Falls dies jemanden interessiert, einfach die Implementierung in der Klasse ZCDX_PARTNER_API_00 ansehen.
 ``` 
      data ls_order type zcdx_order_00.
 

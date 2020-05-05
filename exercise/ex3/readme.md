@@ -5,7 +5,7 @@ Damit es nicht ganz so aufwendig wird, sind für die nachfolgende Übung bereits
 
 ## Übung 3.1 - Business Object View für Order anlegen
 Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz unten bei den CDS Views an.
-1. Lege eine ganz gewöhnliche Data Definition (CDS) Z_I_ORDERS_U_XX (Orders View) für die Datenbanktabelle ZCDX_ORDER_00 an. Als Datenbankview sollte der Name ZIORDERSUXX verwendet werden.
+1. Lege eine ganz gewöhnliche Data Definition (CDS) ZCDX_I_ORDERS_U_XX (Orders View) für die Datenbanktabelle ZCDX_ORDER_00 an. Als Datenbankview sollte der Name ZIORDERSUXX verwendet werden.
   - .I. steht für ... 
   - .U. steht für unmanaged
 2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen

@@ -108,3 +108,8 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
           exporting i_order_nr = <key>-order_nr.
      endloop.
 ```      
+13. Und nun noch die UPDATE Implementierung. Wie man sofort erkennt, übergibt uns das Framework auch die geänderten Felder. Ähnlich wie DATAX. Sehr nett, danke SAP.
+``` 
+xxx
+``` 
+14. Wie man sieht, gibt es auch die leeren Methoden SAVE und CLEANUP. Wenn man es ganz sauber implementiert, würde das CREATE, UPDATE oder DELETE die Änderungen in einen Memory schreiben und erst in der SAVE Methode würden die Änderungen auf die Datenbank geschrieben. CLEANUP ist dann zum initialisieren des Buffers gedacht.

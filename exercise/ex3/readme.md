@@ -15,10 +15,13 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
   association [0..1] to I_Currency       as _Currency  
                      on $projection.CurrencyCode    = _Currency.Currency
 ```
-5. Bitte alle Felder der Datenbank einfügen. 
+5. Bitte alle Felder der Datenbank ud die Association auf die Währung einfügen. Einfach die CodeCompletion nach der geschwungenen Klammer starten.
 ```
     key order_nr, 
     order_date,
     customer,
     currency_code,
+    
+    _Currency
 ```
+6. 

@@ -87,7 +87,7 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 ![BehaviorImplementation](images/exc_3_2.png?raw=true "Behavior Implementation")
 10. BITTE NICHT FRAGEN WIESO die Methoden als locale Klasse/Methoden abgebildet wurden. Auch Thomas Jung und Rich Heilman fanden keine Erklärung. Außer, dass es technische Notwendigkeiten gibt.
 11. Nachfolgenden Code in die Implementierung von CREATE einfügen. Die anzulegenden Orders sind im Methodenparameter ENTITIES enthalten.
-    - Es können natürlich auch Messages aus dem FUBA Call zurückgeliefert werden. Falls dies jemanden interessiert, einfach die Implementierung in der Klasse ZCDX_PARTNER_API_00 ansehen.
+    - Es können natürlich auch Messages aus dem FUBA Call zurückgeliefert und dem Framework übergeben werden. Falls dies jemanden interessiert, einfach die Implementierung in der Klasse ZCDX_PARTNER_API_00 ansehen.
 ``` 
      data ls_order type zcdx_order_00.
 
@@ -99,3 +99,12 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 
      endloop.
  ```     
+12. Die DELETE Implementierung bitte wie folgt einfügen. In dem Fall werden nur die KEYs der zu löschenden Orders in die DELETE Methode geliefert. 
+``` 
+     data ls_order type zcdx_order_00.
+
+     loop at keys ASSIGNING field-symbol(<key>).
+       call function 'ZCDX_ORDER_DELETE'
+          exporting i_order_nr = <key>-order_nr.
+     endloop.
+```      

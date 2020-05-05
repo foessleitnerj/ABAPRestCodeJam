@@ -87,3 +87,14 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 ![BehaviorImplementation](images/exc_3_2.png?raw=true "Behavior Implementation")
 10. BITTE NICHT FRAGEN WIESO die Methoden als locale Klasse/Methoden abgebildet wurden. Auch Thomas Jung und Rich Heilman fanden keine Erklärung. Außer, dass es technische Notwendigkeiten gibt.
 11. Nachfolgenden Code in die Implementierung von CREATE einfügen.
+``` 
+     data ls_order type zcdx_order_00.
+
+     loop at entities ASSIGNING field-symbol(<entity>).
+
+        ls_order = CORRESPONDING #( <entity>  ).
+        call function 'ZCDX_ORDER_CREATE'
+             exporting i_order_data = ls_order.
+
+     endloop.
+ ```     

@@ -64,4 +64,21 @@ define root view ZCDX_I_ORDERS_U_00 as select from zcdx_order_00
   field ( read only ) order_nr;
   field ( mandatory ) customer, currency_code;
 ```
-7. 
+7. Die komplette Behavior Definition sollte nun wie folgt aussehen
+``` 
+unmanaged implementation in class zbp_cdx_i_orders_u_00 unique;
+
+define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
+//late numbering
+//lock master
+//etag master <field_name>
+{
+
+  field ( read only ) order_nr;
+  field ( mandatory ) customer, currency_code;
+
+  create;
+  update;
+  delete;
+}
+``` 

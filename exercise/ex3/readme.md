@@ -84,4 +84,4 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 ``` 
 8. Jetzt brauchen wir noch die Behavior Implementation. Im Kontextmenü der Behavior Definition eine **Behavior Implementation** anlegen. Als Klassennamen ZBP_CDX_I_ORDERS_U_XX verwenden. Das ist der gleiche wie er vorher in der Behavior Definition vorgeschlagen wurde.
 9. Die Klasse wird angelegt und der Reiter "Locale Types" wird eingeblendet und sollte wie nachfolgend aussehen.
-
+![BehaviorImplementation](images/exc_3_2.png?raw=true "Behavior Implementation")

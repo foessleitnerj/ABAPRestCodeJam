@@ -89,7 +89,7 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 11. Nachfolgenden Code in die Implementierung von CREATE einfügen. Die anzulegenden Orders sind im Methodenparameter ENTITIES enthalten.
     - Es können natürlich auch Messages aus dem FUBA Call zurückgeliefert und dem Framework übergeben werden. Falls dies jemanden interessiert, einfach die Implementierung in der Klasse ZCDX_PARTNER_API_00 ansehen.
 ``` 
-     data ls_order type zcdx_order_00.
+     data ls_order type zcdx_order_XX.
 
      loop at entities ASSIGNING field-symbol(<entity>).
 
@@ -101,7 +101,7 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
  ```     
 12. Die DELETE Implementierung bitte wie folgt einfügen. In dem Fall werden nur die KEYs der zu löschenden Orders in die DELETE Methode geliefert. 
 ``` 
-     data ls_order type zcdx_order_00.
+     data ls_order type zcdx_order_XX.
 
      loop at keys ASSIGNING field-symbol(<key>).
        call function 'ZCDX_ORDER_DELETE'
@@ -113,3 +113,51 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 xxx
 ``` 
 14. Wie man sieht, gibt es auch die leeren Methoden SAVE und CLEANUP. Wenn man es ganz sauber implementiert, würde das CREATE, UPDATE oder DELETE die Änderungen in einen Memory schreiben und erst in der SAVE Methode würden die Änderungen auf die Datenbank geschrieben. CLEANUP ist dann zum initialisieren des Buffers gedacht.
+15. Nicht vergessen die Klasse zu aktivieren!
+## Übung 3.3. Anlegen des Projection Views 
+Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angelegten CDS View und dient dazu, die Daten nochmals zu filtern. Es könnten mehrere Projection Views zu einem CDS View existieren.
+1. Anlegen des CDS View ZCDX_C_ORDERS_U_XX Orders Projection View.
+   - Als Template "Define Projection View" verwenden
+   - data_source_name durch ZCDX_I_ORDERS_U_XX ersetzten
+2. Bitte wieder ROOT nach DEFINE ergänzen
+3. Nachfolgende Annotations vor DEFINE ergänzen. Wir wollen METADATA Extension erlauben und das Objekt suchbar machen
+``` 
+@Metadata.allowExtensions: true
+@Search.searchable: true
+``` 
+4. Bitte alle Felder ergänzen. Sollte dann wie folgt aussehen.
+ ``` 
+ key order_nr,
+ order_date,
+ customer,
+ currency_code,
+
+ _Currency  
+ ``` 
+ 5. Nun ergänzen wir ein paar Annotations. Coding wie nachfolgend anpassen.
+    - Infos für die Valuehilfe der Währung
+    - Suchbare Felder
+ ``` 
+@EndUserText.label: 'Orders Projection View'
+@AccessControl.authorizationCheck: #CHECK
+define root view entity ZCDX_C_ORDERS_U_00 as projection on ZCDX_I_ORDERS_U_00 {
+ 
+ @Search.defaultSearchElement: true
+ key order_nr,
+ 
+ @Search.defaultSearchElement: true
+ order_date,
+ 
+ @Search.defaultSearchElement: true
+ customer,
+      
+ @Consumption.valueHelpDefinition: [ { entity: { name:    'I_Currency', 
+                                                 element: 'Currency' } } ]
+ currency_code,
+
+ _Currency   
+
+}
+ ``` 
+ 6. Aktivieren nicht vergessen!
+ # Übung 3.3. MTE

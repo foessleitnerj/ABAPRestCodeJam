@@ -6,6 +6,6 @@ Damit es nicht ganz so aufwendig wird, sind für die nachfolgende Übung bereits
 ## Übung 3.1 - Business Object Views anlegen
 Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz unten bei den CDS Views an.
 1. Lege eine ganz gewöhnliche Data Definition (CDS) Z_I_ORDERS_U_XX (Orders View) für die Datenbanktabelle ZCDX_ORDER_00 an. Als Datenbankview sollte der Name ZIORDERSUXX verwendet werden.
-- ._I_. steht für ... 
-- ._U_. steht für unmanaged
+  - .I. steht für ... 
+  - .U. steht für unmanaged
 

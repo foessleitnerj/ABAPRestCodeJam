@@ -24,4 +24,7 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
     
     _Currency
 ```
-6. 
+6. Da wir hier eine Währung verwenden, kommt nun eine erste Annotation ins Spiel. Bitte folgende Annotation genau vor der Währung ergänzen.
+```
+@Semantics.currencyCode: true
+```

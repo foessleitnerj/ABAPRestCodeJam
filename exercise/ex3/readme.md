@@ -53,3 +53,4 @@ define root view ZCDX_I_ORDERS_U_00 as select from zcdx_order_00
 ## Übung 3.2 Business Object Behavior Definition und Implementierung anlegen
 1. Im Kontextmenü des erstellten CDS Views eine neue **Behavior Definition** anlegen. Bezeichnung z.B. Behavior for ZCDX_I_...
 2. Im Wizard den Implementation Typ auf **unmanaged** ändern.
+3. Nun solltet ihr folgenden Editor sehen.

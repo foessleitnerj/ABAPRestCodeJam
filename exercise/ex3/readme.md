@@ -54,3 +54,4 @@ define root view ZCDX_I_ORDERS_U_00 as select from zcdx_order_00
 1. Im Kontextmenü des erstellten CDS Views eine neue **Behavior Definition** anlegen. 
 2. Im Wizard den Implementation Typ auf **unmanaged** ändern.
 3. Nun solltet ihr folgenden Editor sehen.
+![BehaviorDefinition](images/exc_3_1.png?raw=true "Behavior Definition")

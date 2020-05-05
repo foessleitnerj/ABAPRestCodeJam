@@ -15,3 +15,7 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
   association [0..1] to I_Currency       as _Currency  
                      on $projection.CurrencyCode    = _Currency.Currency
 ```
+5. Bitte alle Felder der Datenbank einfügen. Bitte "Alias" für jedes Feld verwenden. Immer großer Anfangsbuchstabe und keine Unterstriche. Schlußendlich sollten die Felder in etwa so aussehen:
+```
+x
+```

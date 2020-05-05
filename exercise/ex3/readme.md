@@ -51,7 +51,17 @@ define root view ZCDX_I_ORDERS_U_00 as select from zcdx_order_00
 }
 ```
 ## Übung 3.2 Business Object Behavior Definition und Implementierung anlegen
-1. Im Kontextmenü des erstellten CDS Views eine neue **Behavior Definition** anlegen. 
-2. Im Wizard den Implementation Typ auf **unmanaged** ändern.
-3. Nun solltet ihr folgenden Editor sehen.
+1. Im Kontextmenü des erstellten CDS Views eine neue **Behavior Definition** anlegen
+2. Im Wizard den Implementation Typ auf **unmanaged** ändern
+3. Nun solltet ihr folgenden Editor sehen
 ![BehaviorDefinition](images/exc_3_1.png?raw=true "Behavior Definition")
+4. Wie ihr seht wurde bereits ein Klassenname vorgeschlagen. Das lassen wir auch mal so.
+5. An dieser Stelle wollen wir erstmals das Verhalten von Feldern anpassen. 
+   - order_nr soll read-only werden. Die API vergibt später die Nummer
+   - customer und currency sollen Mussfelder werden.
+6. Die Angaben sind nach der geschwungenen Klammer und vor dem CREATE zu machen
+```   
+  field ( read only ) order_nr;
+  field ( mandatory ) customer, currency_code;
+```
+7. 

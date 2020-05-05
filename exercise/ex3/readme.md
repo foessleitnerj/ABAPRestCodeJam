@@ -10,7 +10,8 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
   - .U. steht für unmanaged
 2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen
 3. Bitte den Alias **Order** angeben
-4. Bei der Order gibt es auch ein Währungsfeld. Wir wollen hier später eine F4 Hilfe einbinden, daher müssen wir hier im CDS View eine Association zu dem vorhandenen CDS View I_CURRENCY anlegen
+4. Bei der Order gibt es auch ein Währungsfeld. Wir wollen hier später eine F4 Hilfe einbinden, daher müssen wir hier im CDS View eine Association zu dem vorhandenen CDS View I_CURRENCY anlegen. Zur Erinnerung, Associations werden vor den geschwungenen Klammern ergänzt
+```
   association [0..1] to I_Currency       as _Currency  
                      on $projection.CurrencyCode    = _Currency.Currency
-
+```

@@ -82,4 +82,4 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
   delete;
 }
 ``` 
-8. Jetzt brauchen wir noch die Behavior Implementation. Im Kontextmenü der Behavior Definition eine **Behavior Implementation** anlegen
+8. Jetzt brauchen wir noch die Behavior Implementation. Im Kontextmenü der Behavior Definition eine **Behavior Implementation** anlegen. Als Klassennamen ZBP_CDX_I_ORDERS_U_XX verwenden. Das ist der gleiche wie er vorher in der Behavior Definition vorgeschlagen wurde.

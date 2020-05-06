@@ -156,9 +156,11 @@ Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angele
  5. Nun ergänzen wir ein paar Annotations. Coding wie nachfolgend anpassen.
     - Infos für die Valuehilfe der Währung
     - Suchbare Felder
+    - MTE erlauben
  ``` 
 @EndUserText.label: 'Orders Projection View'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@Metadata.allowExtensions: true
 define root view entity ZCDX_C_ORDERS_U_00 as projection on ZCDX_I_ORDERS_U_00 {
  
  @Search.defaultSearchElement: true
@@ -178,5 +180,44 @@ define root view entity ZCDX_C_ORDERS_U_00 as projection on ZCDX_I_ORDERS_U_00 {
 
 }
  ``` 
- 6. Aktivieren nicht vergessen!
- ## Übung 3.4. MTE
+6. Aktivieren nicht vergessen!
+## Übung 3.4. Metadata Extensions anlegen
+Wir verwenden die Metadaten Extensions um die UI spezifischen Annotations vom Rest des Datenmodells zu separieren. Damit erreichen wir kleinere Einheiten. -> Clean Code
+1. Beim Kontext Menü des Projection Views ZCDX_C_ORDERS_U_XX die neue Metadata Extension ZCDX_E_ORDERS_U_XX anlegen.
+2. Hier definieren wir jetzt genauer, wie das Userinterface aussehen soll. Bitte einfach das nachfolgende Coding kopieren.
+   - Zu Beginn wird mit headerInfo der Kopfbereich definiert
+   - Bei den Feldern wird jeweils festgelegt, wo und wie die Felder angezeigt werden sollen
+ ``` 
+@Metadata.layer: #CORE
+
+@UI: { headerInfo: { typeName: 'Order', 
+                     typeNamePlural: 'Orders', 
+                     title: { type: #STANDARD, 
+                              value: 'order_nr' } } }
+
+annotate view ZCDX_C_ORDERS_U_00
+    with                              
+{
+
+  @UI: { lineItem:       [ { position: 10, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 10 } ], 
+         selectionField: [ { position: 10 } ] }
+order_nr;
+
+  @UI: { lineItem:       [ { position: 20, 
+                             importance: #MEDIUM } ], 
+         identification: [ { position: 20 } ], 
+         selectionField: [ { position: 20 } ] }
+order_date;
+
+  @UI: { lineItem:       [ { position: 30, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 30 } ] }
+customer;
+
+  @UI: { identification: [ { position: 40 } ]}
+currency_code;
+    
+}
+``` 

@@ -110,7 +110,26 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 ```      
 13. Und nun noch die UPDATE Implementierung. Wie man sofort erkennt, übergibt uns das Framework auch die geänderten Felder. Ähnlich wie DATAX. Sehr nett, danke SAP.
 ``` 
-xxx
+    DATA l_order TYPE zcdx_if_order_00.
+    DATA l_order_x TYPE zcdx_if_order_x_00.
+
+    LOOP AT entities ASSIGNING FIELD-SYMBOL(<order_update>).
+      CLEAR: l_order,
+             l_order_x.
+
+      l_order = CORRESPONDING #( <order_update> ). "mapping from entity
+
+      l_order_x-order_nr = <order_update>-order_nr.
+      l_order_x-currency_code = xsdbool( <order_update>-%control-currency_code = if_abap_behv=>mk-on ).
+      l_order_x-order_date = xsdbool( <order_update>-%control-order_Date = if_abap_behv=>mk-on ).
+      l_order_x-customer = xsdbool( <order_update>-%control-customer = if_abap_behv=>mk-on ).
+
+      call function 'ZCDX_ORDER_UPDATE'
+        EXPORTING
+          i_order_data   = l_order
+          i_order_data_x = l_order_x.
+
+    ENDLOOP.
 ``` 
 14. Wie man sieht, gibt es auch die leeren Methoden SAVE und CLEANUP. Wenn man es ganz sauber implementiert, würde das CREATE, UPDATE oder DELETE die Änderungen in einen Memory schreiben und erst in der SAVE Methode würden die Änderungen auf die Datenbank geschrieben. CLEANUP ist dann zum initialisieren des Buffers gedacht.
 15. Nicht vergessen die Klasse zu aktivieren!

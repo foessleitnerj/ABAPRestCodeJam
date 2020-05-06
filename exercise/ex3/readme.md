@@ -238,3 +238,12 @@ Die Idee ist ja, dass mein ein großes Business Objekt hat und mehrere Behavior 
       // use delete;
     }
 ``` 
+### Übung 3.6. Anlegen der Service Definition und Service Binding
+Jetzt haben wir es fast geschafft. Wir brauchen nur noch die Service Definition
+1. Im Kontextmenü von ZCDX_C_ORDERS_XX eine neue Service Definition ZCDX_SD_ORDERS_XX anlegen. Wir machen nur eine kleine Ergänzung beim Alias, sonsten passt der generierte Code. Bitte beachtet, dass der Alias hier Orders (mit s) ist, da Order ein reservierter Name ist?!
+``` 
+@EndUserText.label: 'Service Definition for Orders'
+define service ZCDX_SD_ORDERS_00 {
+  expose ZCDX_C_ORDERS_U_00 as Orders;
+}
+``` 

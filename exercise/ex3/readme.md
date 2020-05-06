@@ -221,3 +221,20 @@ currency_code;
     
 }
 ``` 
+3. Aktivieren nicht vergessen!
+## Übung 3.5. Behavior Definition Projection anlegen
+Die Idee ist ja, dass mein ein großes Business Objekt hat und mehrere Behavior Definitionen hat. Hier könnte z.B. festgelegt werden, dass für eine Projection das DELETE erlaubt ist, für eine andere aber nicht. Etc.
+1. Im Kontextmenü von ZCDX_C_ORDERS_XX eine neue Behavior Definition anlegen. Beim Implementierungstyp müsste eigentlich "Projection" stehen. Wenn nicht passt was nicht.
+2. Im generierten Coden ändern machen wir zwei kleine Änderungen:
+   - orders als alias angeben
+   - delete mit // auskommentieren
+```    
+    projection;
+    
+    define behavior for ZCDX_C_ORDERS_U_00 alias order
+    {
+      use create;
+      use update;
+      // use delete;
+    }
+``` 

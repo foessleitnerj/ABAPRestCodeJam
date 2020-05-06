@@ -198,6 +198,11 @@ Wir verwenden die Metadaten Extensions um die UI spezifischen Annotations vom Re
 annotate view ZCDX_C_ORDERS_U_00
     with                              
 {
+  @UI.facet: [ { id:            'order_nr',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Order',
+                 position:      10 }]
 
   @UI: { lineItem:       [ { position: 10, 
                              importance: #HIGH } ], 

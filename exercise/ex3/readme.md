@@ -247,3 +247,8 @@ define service ZCDX_SD_ORDERS_00 {
   expose ZCDX_C_ORDERS_U_00 as Orders;
 }
 ``` 
+2. Nun legen wir im Kontextmenü der Definition das neue Service ZCDX_UI_C_ORDERS_XX an.
+   - Der Binding Typ soll ODATA V2 - UI sein (ist so vorausgewählt)
+3. Rechts kann mit "Activate" das Service aktiviert werden
+
+   

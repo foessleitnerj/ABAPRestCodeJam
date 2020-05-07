@@ -3,8 +3,8 @@ So, jetzt geht es aber wirklich los. Wir werden ein kleines unmanaged Szenrio um
 ## Übung 3.1 - Business Object View für Order anlegen
 Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz unten bei den CDS Views an.
 1. Lege eine ganz gewöhnliche Data Definition (CDS) **ZCDX_I_ORDERS_U_XX** (Orders View) für die Datenbanktabelle **ZCDX_ORDER_00** an. Als Datenbankview sollte der Name **ZCDXIORDERSUXX** verwendet werden.
-  - .I. steht für ... 
-  - .U. steht für unmanaged
+  - .I. steht für Interface View
+  - .U. steht für Unmanaged
   - Naming Conventions: https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html 
 2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen
 3. Bitte den Alias **Order** angeben

@@ -11,7 +11,7 @@ In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in 
 
 ## Übungen
 
-* [Übung 1 - Hello World](ex1/README.md)
+* [Übung 1 - Hello World](exercise/ex1/README.md)
 * [Aufwärmübung](http://www.dropwizard.io/1.0.2/docs/) 
 * [ABAP RESTful Programming Model - Unmanaged](https://maven.apache.org/) 
 * [ABAP RESTful Programming Model - Managed](https://rometools.github.io/rome/) 

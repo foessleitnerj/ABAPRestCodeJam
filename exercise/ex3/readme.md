@@ -5,7 +5,7 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
 1. Lege eine ganz gewöhnliche Data Definition (CDS) **ZCDX_I_ORDERS_U_XX** (Orders View) für die Datenbanktabelle **ZCDX_ORDER_00** an. Als Datenbankview sollte der Name **ZCDXIORDERSUXX** verwendet werden.
   - .I. steht für ... 
   - .U. steht für unmanaged
-  - ![BehaviorDefinition](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html "Test")
+  - Naming Conventions: https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html 
 2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen
 3. Bitte den Alias **Order** angeben
 4. Bei der Order gibt es auch ein Währungsfeld. Wir wollen hier später eine F4 Hilfe einbinden, daher müssen wir hier im CDS View eine Association zu dem vorhandenen CDS View I_CURRENCY anlegen. Zur Erinnerung, Associations werden vor den geschwungenen Klammern ergänzt

@@ -1,5 +1,8 @@
 # Übung 3 - ABAP RESTful Programming Model - Unmanaged
-So, jetzt geht es aber wirklich los. Wir werden ein kleines unmanaged Szenrio umsetzen. Bei den unmanaged Szenarien haben wir die Kontrolle über die CRUD Operationen und können z.B. bestehende BAPIs oder Fubas wiederverwenden. Wie cool ist das denn? In der nachfolgenden Übung versuchen wir genau so ein Szenario beispielhaft umzusetzen. Es gibt bereits eine vorhandene Datenbank und vorhandene Funktionsbausteine. 
+So, jetzt geht es aber wirklich los. Wir werden ein kleines unmanaged Szenrio umsetzen. Bei den unmanaged Szenarien haben wir die Kontrolle über die CRUD Operationen und können z.B. bestehende BAPIs oder Fubas wiederverwenden. Wie cool ist das denn? In der nachfolgenden Übung versuchen wir genau so ein Szenario beispielhaft umzusetzen. Es gibt bereits eine vorhandene Datenbank und vorhandene Funktionsbausteine.
+Am Ende wollen wir eine kleine Anwendung haben, mit der wir einen sehr einfachen Auftrag erfassen und ändern können.
+![Demo](images/exc_3_4.png?raw=true)
+![Demo](images/exc_3_5.png?raw=true)
 ## Übung 3.1 - Business Object View für Order anlegen
 Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz unten bei den CDS Views an.
 1. Lege eine ganz gewöhnliche Data Definition (CDS) **ZCDX_I_ORDERS_U_XX** (Orders View) für die Datenbanktabelle **ZCDX_ORDER_00** an. Als Datenbankview sollte der Name **ZCDXIORDERSUXX** verwendet werden.

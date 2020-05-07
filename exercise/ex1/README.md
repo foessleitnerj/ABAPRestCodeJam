@@ -6,5 +6,5 @@ Als erstes werden wir uns ein eigenes Paket anlegen. Bitte ersetzte alle XXX dur
 4. Füge auch dieses neue Paket zu deinen Favorite Packages hinzu.
    
    ![Package](images/exc_1_1.png?raw=true "Optional Title")
-# Summary
-Perfekt! Alle Vorbereitungen sind erledigt, jetzt kann es losgehen!
+# Zusammenfassung
+Perfekt! - Aber es war auch ziemlich easy. - Alle Vorbereitungen sind erledigt, jetzt kann es losgehen!

@@ -1,4 +1,4 @@
-# Übung 2
+# Übung 2 - HTTP Service
 Zuerst machen wir eine kleine Aufwärmübung. Und zwar machen wir eine Hello World HTTP Klasse, cool oder? 
 ## Übung 2.1
 Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klasse** erstellt.

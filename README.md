@@ -13,4 +13,4 @@ In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in 
 
 * [Übung 1 - Paket anlegen](exercise/ex1/README.md)
 * [Übung 2 - HTTP Service](exercise/ex2/README.md)
-* [Übung 3 - ABAPRestful Managed Object](exercise/ex3/README.md)
+* [Übung 3 - ABAPRestful Managed Object](exercise/ex3/readme.md)

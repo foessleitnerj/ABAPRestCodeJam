@@ -2,7 +2,7 @@
 So, jetzt geht es aber wirklich los. Wir werden ein kleines unmanaged Szenrio umsetzen. Bei den unmanaged Szenarien haben wir die Kontrolle über die CRUD Operationen und können z.B. bestehende BAPIs oder Fubas wiederverwenden. Wie cool ist das denn? In der nachfolgenden Übung versuchen wir genau so ein Szenario beispielhaft umzusetzen. Es gibt bereits eine vorhandene Datenbank und vorhandene Funktionsbausteine. 
 ## Übung 3.1 - Business Object View für Order anlegen
 Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz unten bei den CDS Views an.
-1. Lege eine ganz gewöhnliche Data Definition (CDS) ZCDX_I_ORDERS_U_XX (Orders View) für die Datenbanktabelle ZCDX_ORDER_00 an. Als Datenbankview sollte der Name ZCDXIORDERSUXX verwendet werden.
+1. Lege eine ganz gewöhnliche Data Definition (CDS) **ZCDX_I_ORDERS_U_XX** (Orders View) für die Datenbanktabelle **ZCDX_ORDER_00** an. Als Datenbankview sollte der Name **ZCDXIORDERSUXX** verwendet werden.
   - .I. steht für ... 
   - .U. steht für unmanaged
 2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen

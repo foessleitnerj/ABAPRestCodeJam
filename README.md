@@ -7,7 +7,7 @@ In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in 
 ## Vorbereitungen
 - ABAP Development Tools sind installiert und auf dem aktuellsten Stand
 - ABAP in the Cloud Trial ist eingerichtet und Verbunden
-- Für Übung 3 werden vorhandene Objekte benötigt. Diese können hier bezogen werden: 
+- Für Übung 3 werden vorhandene Objekte benötigt. Diese können hier bezogen werden: https://github.com/foessleitnerj/ABAPRestCodeJam
 
 ## Übungen
 

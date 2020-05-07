@@ -1,7 +1,7 @@
 # Übung 2 - HTTP Service "Küss die Hande, schöne Frau"
 Zuerst machen wir eine kleine Aufwärmübung. Und zwar machen wir eine Hello World HTTP Klasse, cool oder? 
 ## Übung 2.1
-Am Ende dieser Übung hast Du eine **HTTP Service** und eine **HTTP Handler Klasse** erstellt.
+Am Ende dieser Übung hast Du ein **HTTP Service** und eine **HTTP Handler Klasse** erstellt.
 1. Erstelle das neue HTTP Service **Z_CDX_HELLO_WORLD_XXX** mit Beschreibung **Hello World HTTP**
    - Rechte Maus im bei Paket Z_CDX_XXX -> New -> Other ABAP Repository Object
    - Connectivity -> HTTP Service

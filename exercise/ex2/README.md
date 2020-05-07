@@ -1,6 +1,6 @@
 # Übung 2 - HTTP Service "Küss die Hande, schöne Frau"
 Zuerst machen wir eine kleine Aufwärmübung. Und zwar machen wir eine Hello World HTTP Klasse, cool oder? 
-## Übung 2.1
+## Übung 2.1 Anlage HTTP Service
 Am Ende dieser Übung hast Du ein **HTTP Service** und eine **HTTP Handler Klasse** erstellt.
 1. Erstelle das neue HTTP Service **Z_CDX_HELLO_WORLD_XXX** mit Beschreibung **Hello World HTTP**
    - Rechte Maus bei Paket Z_CDX_XXX -> New -> Other ABAP Repository Object
@@ -21,7 +21,7 @@ response->set_text( |Küss die Hand, schöne Frau - Ihre Augen sind so blau - Ti
 
 ![HTTPService](images/exc_2_3.png?raw=true "HTTP Service")
 
-## Übung 2.2. Optinal für die Schnellen und Streber
+## Übung 2.2. Nun kommt Logik rein
 Jetzt machen wir etwas mehr Logik in der HTTP Klasse. Wir werden einen URL Parameter verwenden
 1. Dem HTTP Call soll der Parameter **command** mitgegeben werden können
    - Wenn **eav** übergeben wird, soll der Text aus Übung 2.1 übergeben werden

@@ -2,10 +2,12 @@
 Übungen für eine ca. 3 stündige ABAPRest CodeJam
 
 ## Überblick
-abc
+In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in the Cloud beschäftigen. Die ersten beiden Übungen helfen uns beim Einstieg, die dritte Übung ist dann eine ABAPRest Anwendung.
 
 ## Vorbereitungen
-abc
+- ABAP Development Tools sind installiert und auf dem aktuellsten Stand
+- ABAP in the Cloud Trial ist eingerichtet und Verbunden
+- Für Übung 3 werden vorhandene Objekte benötigt. Diese können hier bezogen werden: 
 
 ## Übungen
 

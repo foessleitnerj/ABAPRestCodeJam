@@ -1,4 +1,4 @@
-FUNCTION ZCDX_PARTNER_DELETE.
+function zcdx_partner_delete.
 *"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING

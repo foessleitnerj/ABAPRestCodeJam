@@ -1,0 +1,8 @@
+projection;
+
+define behavior for ZCDX_C_ORDERS_U_00 alias order
+{
+   use create;
+   use update;
+   use delete;
+}

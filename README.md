@@ -11,6 +11,6 @@ In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in 
 
 ## Übungen
 
-* [Übung 1 - Hello World](exercise/ex1/README.md)
-* [Übung 2 - HTTP Client](exercise/ex2/README.md)
+* [Übung 1 - Paket anlegen](exercise/ex1/README.md)
+* [Übung 2 - HTTP Service](exercise/ex2/README.md)
 * [Übung 3 - ABAPRestful Managed Object](exercise/ex3/README.md)

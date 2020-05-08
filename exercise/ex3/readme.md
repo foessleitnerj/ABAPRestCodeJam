@@ -171,6 +171,7 @@ Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angele
 @EndUserText.label: 'Orders Projection View'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
+@Search.searchable: true
 define root view entity ZCDX_C_ORDERS_U_00 as projection on ZCDX_I_ORDERS_U_00 {
  
  @Search.defaultSearchElement: true

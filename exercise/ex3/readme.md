@@ -58,8 +58,8 @@ define root view ZCDX_I_ORDERS_U_00 as select from zcdx_order_00
 ![BehaviorDefinition](images/exc_3_1.png?raw=true "Behavior Definition")
 4. Wie ihr seht wurde bereits ein Klassenname vorgeschlagen. BP steht hier für "Behavior Pool" Das lassen wir auch mal so.
 5. An dieser Stelle wollen wir erstmals das Verhalten von Feldern anpassen. 
-   - order_nr soll read-only werden. Die API vergibt später die Nummer
-   - customer und currency sollen Mussfelder werden.
+   - **order_nr** soll read-only werden. Die API vergibt später die Nummer
+   - **customer** und **currency** sollen Mussfelder werden.
 6. Die Angaben sind nach der geschwungenen Klammer und vor dem CREATE zu machen
 ```   
   field ( read only ) order_nr;

@@ -31,7 +31,7 @@ Was wir seit langem sagen tritt nun ein. Wir fangen mit der Modellierung ganz un
 ```
 7. Wenn ihr alles richtig gemacht habt, sollte der CDS View wie folgt aussehen.
 ```
-@AbapCatalog.sqlViewName: 'ZCDXIORDERSU00'
+@AbapCatalog.sqlViewName: 'ZCDXIORDERSUXX'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #CHECK

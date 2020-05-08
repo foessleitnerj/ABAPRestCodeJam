@@ -104,9 +104,18 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
 ``` 
      data ls_order type zcdx_order_00.
 
-     loop at keys ASSIGNING field-symbol(<key>).
-       call function 'ZCDX_ORDER_DELETE'
-          exporting i_order_nr = <key>-order_nr.
+     loop at entities ASSIGNING field-symbol(<entity>).
+
+        ls_order = CORRESPONDING #( <entity>  ).
+
+        call function 'ZCDX_ORDER_CREATE'
+             exporting i_order_data = ls_order
+             importing e_order_out = ls_order.
+
+        INSERT VALUE #( %cid = <entity>-%cid
+                        order_nr = ls_order-order_nr )
+                       INTO TABLE mapped-zcdx_i_orders_u_00.
+
      endloop.
 ```      
 13. Und nun noch die UPDATE Implementierung. Wie man sofort erkennt, übergibt uns das Framework auch die geänderten Felder. Ähnlich wie DATAX. Sehr nett, danke SAP.

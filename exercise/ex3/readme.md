@@ -95,18 +95,6 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
      loop at entities ASSIGNING field-symbol(<entity>).
 
         ls_order = CORRESPONDING #( <entity>  ).
-        call function 'ZCDX_ORDER_CREATE'
-             exporting i_order_data = ls_order.
-
-     endloop.
- ```     
-12. Die DELETE Implementierung bitte wie folgt einfügen. In dem Fall werden nur die KEYs der zu löschenden Orders in die DELETE Methode geliefert. 
-``` 
-     data ls_order type zcdx_order_00.
-
-     loop at entities ASSIGNING field-symbol(<entity>).
-
-        ls_order = CORRESPONDING #( <entity>  ).
 
         call function 'ZCDX_ORDER_CREATE'
              exporting i_order_data = ls_order
@@ -117,10 +105,18 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
                        INTO TABLE mapped-zcdx_i_orders_u_00.
 
      endloop.
+ ```     
+12. Die DELETE Implementierung bitte wie folgt einfügen. In dem Fall werden nur die KEYs der zu löschenden Orders in die DELETE Methode geliefert. 
+``` 
+
+     loop at keys ASSIGNING field-symbol(<key>).
+       call function 'ZCDX_ORDER_DELETE'
+          exporting i_order_nr = <key>-order_nr.
+     endloop.
 ```      
 13. Und nun noch die UPDATE Implementierung. Wie man sofort erkennt, übergibt uns das Framework auch die geänderten Felder. Ähnlich wie DATAX. Sehr nett, danke SAP.
 ``` 
-    DATA l_order TYPE zcdx_if_order_00.
+   DATA l_order TYPE zcdx_if_order_00.
     DATA l_order_x TYPE zcdx_if_order_x_00.
 
     LOOP AT entities ASSIGNING FIELD-SYMBOL(<order_update>).
@@ -134,10 +130,14 @@ define behavior for ZCDX_I_ORDERS_U_00 //alias <alias_name>
       l_order_x-order_date = xsdbool( <order_update>-%control-order_Date = if_abap_behv=>mk-on ).
       l_order_x-customer = xsdbool( <order_update>-%control-customer = if_abap_behv=>mk-on ).
 
-      call function 'ZCDX_ORDER_UPDATE'
+      CALL FUNCTION 'ZCDX_ORDER_UPDATE'
         EXPORTING
           i_order_data   = l_order
           i_order_data_x = l_order_x.
+
+      INSERT VALUE #( %cid = <order_update>-%cid_ref
+                      order_nr = <order_update>-order_nr )
+                     INTO TABLE mapped-zcdx_i_orders_u_00.
 
     ENDLOOP.
 ``` 

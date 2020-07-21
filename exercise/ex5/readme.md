@@ -278,4 +278,31 @@ Jetzt wollen wir noch die eine oder andere Änderung am Userinterface vornehmen.
     methods get_features for features
        importing keys request requested_features for Order result order.
 ``` 
-3. 
+3. Die Implementierung sollte wie folgt aussehen. Wobei ich hier noch ein generelles Problem hab, denn leider funktioniert es nicht so wie erhofft -> Wenn wir nun noch Zeit haben, versuchen wir das zu lösen!
+```
+     data l_result like line of result.
+
+     read entity zcdx_i_orders_m_00 fields ( customer currency_code )
+        with value #( for keyval in keys ( %key = keyval-%key ) )
+        result data(lt_orders).
+
+     loop at lt_orders ASSIGNING field-symbol(<order>).
+        if <order>-customer is not initial.
+           l_result-order_nr = <order>-order_nr.
+           l_result-%key = <order>-%key.
+           l_result-%field-currency_code = if_abap_behv=>fc-f-mandatory.
+           append l_result to result.
+        else.
+           l_result-order_nr = <order>-order_nr.
+           l_result-%key = <order>-%key.
+           l_result-%field-currency_code = if_abap_behv=>fc-f-read_only.
+           append l_result to result.
+        endif.
+     endloop.
+
+  ENDMETHOD.
+```
+## Geschafft!
+Gratulation, wir haben unser erstes Managed RAP Object. Natürlich ist das nur eine Demo, es gäbe noch folgende Punkte die wir uns überlegen müssten bzw. wo es im RAP Lösungen gibt:
+- Nummernvergabe 
+- Actions/Buttons

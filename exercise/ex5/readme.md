@@ -56,3 +56,19 @@ Wie ihr sicher bemerkt habt, unterscheidet sich dieser Teil nicht vom unmanaged 
 4. Außerhalb von SAP wollen wir aber "schnöne" Namen verwenden, daher bitte einen alias **Order** angeben.
 5. **lock master** bitte aktivieren 
 6. etag master verwenden wir hier in dem Demo nicht. Damit könnten wir automatisch z.B. den letzen Änderer füllen
+7. Wenn ihr alles richtig gemacht habt, sollte die Behavior Definition wie folgt aussehen
+```
+managed; // implementation in class zbp_cdx_i_orders_m_00 unique;
+
+define behavior for ZCDX_I_ORDERS_M_00 alias Order
+persistent table ZCDX_ORDER_00
+lock master
+//authorization master ( instance )
+//etag master
+
+{
+  create;
+  update;
+  delete;
+}
+```

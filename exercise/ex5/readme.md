@@ -219,5 +219,26 @@ CLASS lhc_Order IMPLEMENTATION.
 
 ENDCLASS.
 ``` 
-4. Jetzt kommen ein paar neue Statements.
-   - 
+4. Jetzt kommen ein paar neue Statements. Bitte einfach das Coding der Methode übernehmen. Es geht hier darum, dass wir aus dem Memory die geänderten Daten ermitteln und prüfen. Wenn die Partnernummer größer als 100 ist, dann soll eine Fehlermeldung erfolgen.
+``` 
+  METHOD validateCustomer.
+
+* read entities
+     read entity zcdx_i_orders_m_00\\Order fields ( Customer ) with
+        value #( for <root_key> in keys (  %key = <root_key> ) )
+        result data(lt_orders).
+
+     loop at lt_orders ASSIGNING field-symbol(<order>).
+        if <order>-customer > 99.
+           append value #( order_nr = <order>-order_nr ) to failed.
+           append value #( order_nr = <order>-order_nr
+                           %msg = new_message(  id = 'ZCDX_MESSAGES'
+                                                number = '001'
+                                                severity = if_abap_behv_message=>severity-error )
+                           %element-order_nr = if_abap_behv=>mk-on ) to reported.
+        endif.
+     endloop.
+
+  ENDMETHOD.
+``` 
+5. Nun sollte bei Anlagen oder Änderungen nur Partnernummern erlaubt sein, welche kleiner als 100 sind.

@@ -88,3 +88,8 @@ Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angele
 ```
 5. Auch hier machen wir wieder besser lesbare Feldnamen:
    - OrderNumber, OrderDate, Cusomter und CurrencyCode
+6. Und jetzt ergänzen wir noch etwas für die Suche. In Fiori Elements Anwendungen gibt es auch ein allgemeines Suchfeld. Mit folgender Annotation definieren wir, dass bei solchen Suchen u.a. das Feld Customer verwendet werden soll. Die Annotation ist exakt vor dem Feld anzugeben
+```
+@Search.defaultSearchElement: true
+customer      as Customer,
+```

@@ -242,3 +242,10 @@ ENDCLASS.
   ENDMETHOD.
 ``` 
 5. Nun sollte bei Anlagen oder Änderungen nur Partnernummern erlaubt sein, welche kleiner als 100 sind.
+6. Jetzt versucht es beim Datum valudateDates selber. Ein Datum soll immer kleiner oder gleich dem Tagesdatum sein. Bei einem Datum in der Zukunft soll eine Fehlermeldung ZCDX_MESSAGES/002 ausgegeben werden. - Und los!
+.
+.
+.
+.
+.
+

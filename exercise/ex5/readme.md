@@ -111,7 +111,7 @@ define root view entity ZCDX_C_ORDERS_M_00 as projection on ZCDX_I_ORDERS_M_00 {
        _Currency 
 }
 ```
-## Übung 3.4. Metadata Extensions anlegen
+## Übung 5.4. Metadata Extensions anlegen
 Jetzt machen wir unsere Metadaten Extensions um UI Infos für die Fiori Anwendung anzugeben. Man könnte die Annotations natürlich auch bereits in den CDS Views direkt angeben, aber durch die Extensions hat man eine saubere Trennung der UI spezifischen Annotations.
 1. Beim Kontext Menü des Projection Views ZCDX_C_ORDERS_M_XX die neue Metadata Extension ZCDX_E_ORDERS_M_XX anlegen.
 2. Im Wizard **Annotate View** auswählen
@@ -152,7 +152,7 @@ annotate view ZCDX_C_ORDERS_M_00
     
 }  
 ```
-## Übung 3.5. Behavior Definition Projection anlegen
+## Übung 5.5. Behavior Definition Projection anlegen
 Die Idee ist ja, dass mein ein großes Business Objekt hat und mehrere Behavior Definitionen hat. Hier könnte z.B. festgelegt werden, dass für eine Projection das DELETE erlaubt ist, für eine andere aber nicht. Etc.
 1. Im Kontextmenü von ZCDX_C_ORDERS_M_XX eine neue Behavior Definition anlegen. Beim Implementierungstyp müsste eigentlich "Projection" stehen. Wenn nicht passt was nicht.
 2. Im generierten Coden ändern machen wir zwei kleine Änderungen:
@@ -170,7 +170,7 @@ define behavior for ZCDX_C_ORDERS_M_00 alias orders
 //  use delete;
 }
 ```   
-### Übung 3.6. Anlegen der Service Definition und Service Binding
+### Übung 5.6. Anlegen der Service Definition und Service Binding
 Jetzt haben wir es fast geschafft. Wir brauchen nur noch die Service Definition
 1. Im Kontextmenü von ZCDX_C_ORDERS_M_XX eine neue Service Definition ZCDX_SD_ORDERS_M_XX anlegen. Wir machen nur eine kleine Ergänzung beim Alias, sonsten passt der generierte Code. Bitte beachtet, dass der Alias hier Orders (mit s) ist, da Order ein reservierter Name ist?!
 2. Sieht euer Code wie folgt aus?
@@ -185,7 +185,7 @@ define service ZCDX_SD_ORDERS_M_00 {
 4. Rechts kann mit "Activate" das Service aktiviert werden. Dauert ein paar Sekunden
 5. Dann das Objekt "Orders" auswählen und "Preview" drücken ... und beten! Wenn es beim ersten mal nicht startet, etwas später nochmals probieren.
 6. Es sollte nun eine ziemlich fertige Anwendung starten. Spiel etwas herum damit. Ihr könnt neue Einträge anlegen oder ändern, die Daten werden auf die DB fortgeschrieben - durch das Framework.
-### Übung 3.7. Validierungen hinzufügen
+### Übung 5.7. Validierungen hinzufügen
 Interessant wird es ja, wenn wir nun gewisse Erweiterungen vornehmen. Wie z.B. eine eigene Validierung.
 1. Zuerst müssen wir in der Behavior Definition ZCDX_I_ORDERS_M_XX ganz oben die Klasse ergänzen. Dort werden wir dann später unsere Implementierungen vornehmen.
 ```
@@ -265,4 +265,17 @@ ENDCLASS.
      endloop.
 
   ENDMETHOD.
+  ### 
 ``` 
+### Übung 5.7. Feldattribute / Userinterface
+Jetzt wollen wir noch die eine oder andere Änderung am Userinterface vornehmen. Wir wollen das Feld dynamisch zu einem Mußfeld machen. Damit es einfach ist, wollen wir das Feld Währung dann zu einem Mußfeld machen, wenn ein Kunde angegeben ist. Wenn der Kunde leer ist, soll es nur read only sein.
+1. Im CDS View ZCDX_I_ORDERS_M_XX ergänzen wir folgende Annotations. Nach **delete;** - Aktivieren nicht vergessen
+``` 
+  field (features: instance) currency_code;
+``` 
+2. In der Behavior Klasse legen wir die Methode GET_FEATURES an.
+``` 
+    methods get_features for features
+       importing keys request requested_features for Order result order.
+``` 
+3. 

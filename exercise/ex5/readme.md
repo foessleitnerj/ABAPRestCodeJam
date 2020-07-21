@@ -49,3 +49,10 @@ define root view ZCDX_I_ORDERS_M_00 as select from zcdx_order_00
 }
 ```
 Wie ihr sicher bemerkt habt, unterscheidet sich dieser Teil nicht vom unmanaged Scenario. Wir haben lediglich im Namen das Suffix "M" eingefügt, der Rest ist 1:1 gleich.
+## Übung 5.2 Business Object Behavior Definition und Implementierung anlegen
+1. Im Kontextmenü des erstellten CDS Views eine neue **Behavior Definition** anlegen
+2. Im Wizard den Implementation Typ auf **managed** belassen bzw. ggf. ändern
+3. Wie ihr seht wurde die pseristent table bereits aus der CDS View Definition übernommen
+4. Außerhalb von SAP wollen wir aber "schnöne" Namen verwenden, daher bitte einen alias **Order** angeben.
+5. **lock master** bitte aktivieren 
+6. etag master verwenden wir hier in dem Demo nicht. Damit könnten wir automatisch z.B. den letzen Änderer füllen

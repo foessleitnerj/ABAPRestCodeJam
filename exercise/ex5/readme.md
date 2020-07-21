@@ -185,3 +185,39 @@ define service ZCDX_SD_ORDERS_M_00 {
 4. Rechts kann mit "Activate" das Service aktiviert werden. Dauert ein paar Sekunden
 5. Dann das Objekt "Orders" auswählen und "Preview" drücken ... und beten! Wenn es beim ersten mal nicht startet, etwas später nochmals probieren.
 6. Es sollte nun eine ziemlich fertige Anwendung starten. Spiel etwas herum damit. Ihr könnt neue Einträge anlegen oder ändern, die Daten werden auf die DB fortgeschrieben - durch das Framework.
+### Übung 3.7. Validierungen hinzufügen
+Interessant wird es ja, wenn wir nun gewisse Erweiterungen vornehmen. Wie z.B. eine eigene Validierung.
+1. Zuerst müssen wir in der Behavior Definition ZCDX_I_ORDERS_M_XX ganz oben die Klasse ergänzen. Dort werden wir dann später unsere Implementierungen vornehmen.
+```
+managed implementation in class zbp_cdx_i_orders_m_00 unique;
+```
+2. In der Behavior Definition ZCDX_I_ORDERS_M_XX ergänzen wir folgende Erweiterung, gleich nach dem delete;
+``` 
+  validation validateCustomer on save { field customer; }
+  validation validateDates    on save { field order_date; }
+```  
+3. Und jetzt generieren wir die Klasse indem wir uns auf den Klassennamen im Editor stellen und mit dem QuickFix die Klasse erstellen. Nach der Anlage verzweigt der Editor nach "Local Types". Wie man sieht, sind die beiden Methoden für die Validierung bereits vorhanden:
+``` 
+CLASS lhc_Order DEFINITION INHERITING FROM cl_abap_behavior_handler.
+  PRIVATE SECTION.
+
+    METHODS validateCustomer FOR VALIDATION Order~validateCustomer
+      IMPORTING keys FOR Order.
+
+    METHODS validateDates FOR VALIDATION Order~validateDates
+      IMPORTING keys FOR Order.
+
+ENDCLASS.
+
+CLASS lhc_Order IMPLEMENTATION.
+
+  METHOD validateCustomer.
+  ENDMETHOD.
+
+  METHOD validateDates.
+  ENDMETHOD.
+
+ENDCLASS.
+``` 
+
+   - 

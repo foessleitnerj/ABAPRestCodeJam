@@ -54,7 +54,7 @@ Wie ihr sicher bemerkt habt, unterscheidet sich dieser Teil nicht vom unmanaged 
 2. Im Wizard den Implementation Typ auf **managed** belassen bzw. ggf. ändern
 3. Wie ihr seht wurde die pseristent table bereits aus der CDS View Definition übernommen
 4. Außerhalb von SAP wollen wir aber "schnöne" Namen verwenden, daher bitte einen alias **Order** angeben.
-5. **lock master** bitte aktivieren 
+5. **lock master** bitte aktivieren. Damit übernimmt das Framework die notwendigen Sperren. 
 6. etag master verwenden wir hier in dem Demo nicht. Damit könnten wir automatisch z.B. den letzen Änderer füllen
 7. Wenn ihr alles richtig gemacht habt, sollte die Behavior Definition wie folgt aussehen
 ```
@@ -72,3 +72,19 @@ lock master
   delete;
 }
 ```
+## Übung 5.3 Anlegen des Projection Views
+Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angelegten CDS View und dient dazu, die Daten nochmals zu filtern. Es könnten mehrere Projection Views zu einem CDS View existieren.
+1. Anlegen des CDS View ZCDX_C_ORDERS_M_XX Orders Projection View.
+   - Als Template im Wizard **Define Projection View** verwenden
+   - data_source_name durch ZCDX_I_ORDERS_M_XX ersetzten
+2. Bitte wieder ROOT nach DEFINE ergänzen
+3. Wir wollen später wieder Metadaten Extensions anlegen. Daher die notwendige Annotaiton im Header angeben
+```
+@Metadata.allowExtensions: true
+```
+4. Damit wir unsere Aufträge später im UI suchen können, ist hier - ebenfalls im Header - noch eine weitere Annotation notwendig
+```
+@Search.searchable: true  
+```
+5. Auch hier machen wir wieder besser lesbare Feldnamen:
+   - OrderNumber, OrderDate, Cusomter und CurrencyCode

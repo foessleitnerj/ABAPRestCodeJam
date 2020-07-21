@@ -93,3 +93,19 @@ Nun müssen wir noch einen Projection View anlegen. Der liegt "über" dem angele
 @Search.defaultSearchElement: true
 customer      as Customer,
 ```
+7. Für unser einfaches Demo reicht es jetzt einmal, bitte aktivieren nicht vergessen. Euer View sollte wie folgt aussehen.
+```
+@EndUserText.label: 'Order Projection View'
+@AccessControl.authorizationCheck: #CHECK
+define root view entity ZCDX_C_ORDERS_M_00 as projection on ZCDX_I_ORDERS_M_00 {
+
+   key order_nr      as OrderNumber,
+       order_date    as OrderDate,
+       
+       @Search.defaultSearchElement: true
+       customer      as Customer,
+       currency_code as CurrencyCode,
+
+       _Currency 
+}
+```

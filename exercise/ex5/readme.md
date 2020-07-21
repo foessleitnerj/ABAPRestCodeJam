@@ -97,6 +97,8 @@ customer      as Customer,
 ```
 @EndUserText.label: 'Order Projection View'
 @AccessControl.authorizationCheck: #CHECK
+@Metadata.allowExtensions: true
+@Search.searchable: true
 define root view entity ZCDX_C_ORDERS_M_00 as projection on ZCDX_I_ORDERS_M_00 {
 
    key order_nr      as OrderNumber,
@@ -109,3 +111,77 @@ define root view entity ZCDX_C_ORDERS_M_00 as projection on ZCDX_I_ORDERS_M_00 {
        _Currency 
 }
 ```
+## Übung 3.4. Metadata Extensions anlegen
+Jetzt machen wir unsere Metadaten Extensions um UI Infos für die Fiori Anwendung anzugeben. Man könnte die Annotations natürlich auch bereits in den CDS Views direkt angeben, aber durch die Extensions hat man eine saubere Trennung der UI spezifischen Annotations.
+1. Beim Kontext Menü des Projection Views ZCDX_C_ORDERS_M_XX die neue Metadata Extension ZCDX_E_ORDERS_M_XX anlegen.
+2. Im Wizard **Annotate View** auswählen
+3. Bei der Header Annotation @Metadata.layer bitte 
+4. Hier definieren wir jetzt genauer, wie das Userinterface in der Fiori Anwendung aussehen soll. Bitte einfach das nachfolgende Coding kopieren.
+   - Zu Beginn wird mit headerInfo der Kopfbereich definiert
+   - Bei den Feldern wird jeweils festgelegt, wo und wie die Felder angezeigt werden sollen
+```
+@Metadata.layer: #CORE
+annotate view ZCDX_C_ORDERS_M_00
+    with 
+{
+  @UI.facet: [ { id:            'OrderNumber',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Order',
+                 position:      10 }]
+
+  @UI: { lineItem:       [ { position: 10, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 10 } ], 
+         selectionField: [ { position: 10 } ] }
+  OrderNumber;
+
+  @UI: { lineItem:       [ { position: 20, 
+                             importance: #MEDIUM } ], 
+         identification: [ { position: 20 } ], 
+         selectionField: [ { position: 20 } ] }
+  OrderDate;
+
+  @UI: { lineItem:       [ { position: 30, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 30 } ] }
+  Customer;
+
+  @UI: { identification: [ { position: 40 } ]}
+  CurrencyCode;
+    
+}  
+```
+## Übung 3.5. Behavior Definition Projection anlegen
+Die Idee ist ja, dass mein ein großes Business Objekt hat und mehrere Behavior Definitionen hat. Hier könnte z.B. festgelegt werden, dass für eine Projection das DELETE erlaubt ist, für eine andere aber nicht. Etc.
+1. Im Kontextmenü von ZCDX_C_ORDERS_M_XX eine neue Behavior Definition anlegen. Beim Implementierungstyp müsste eigentlich "Projection" stehen. Wenn nicht passt was nicht.
+2. Im generierten Coden ändern machen wir zwei kleine Änderungen:
+   - orders als alias angeben
+   - delete mit // auskommentieren
+   - Aktiviren nicht vergessen
+3. Projection sollte wie folgt aussehen:
+```    
+projection;
+
+define behavior for ZCDX_C_ORDERS_M_00 alias orders
+{
+  use create;
+  use update;
+//  use delete;
+}
+```   
+### Übung 3.6. Anlegen der Service Definition und Service Binding
+Jetzt haben wir es fast geschafft. Wir brauchen nur noch die Service Definition
+1. Im Kontextmenü von ZCDX_C_ORDERS_M_XX eine neue Service Definition ZCDX_SD_ORDERS_M_XX anlegen. Wir machen nur eine kleine Ergänzung beim Alias, sonsten passt der generierte Code. Bitte beachtet, dass der Alias hier Orders (mit s) ist, da Order ein reservierter Name ist?!
+2. Sieht euer Code wie folgt aus?
+```  
+@EndUserText.label: 'Service Definition for Order'
+define service ZCDX_SD_ORDERS_M_00 {
+  expose ZCDX_C_ORDERS_M_00 as Orders;
+}
+```  
+3. Nun legen wir im Kontextmenü der Definition das neue Service ZCDX_UI_C_ORDERS_M_XX an.
+   - Der Binding Typ soll ODATA V2 - UI sein (ist so vorausgewählt)
+4. Rechts kann mit "Activate" das Service aktiviert werden. Dauert ein paar Sekunden
+5. Dann das Objekt "Orders" auswählen und "Preview" drücken ... und beten! Wenn es beim ersten mal nicht startet, etwas später nochmals probieren.
+6. Es sollte nun eine ziemlich fertige Anwendung starten. Spiel etwas herum damit. Ihr könnt neue Einträge anlegen oder ändern, die Daten werden auf die DB fortgeschrieben - durch das Framework.

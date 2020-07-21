@@ -1,1 +1,51 @@
-test
+# Übung 5 - ABAP RESTful Programming Model - Managed
+Beim unmanaged Scenario haben wir noch relativ viel selber implementieren müssen. Nun schauen wir uns eine managed Implemetierung an, bei der wir deutlich weniger selber implementieren müssen. Dieses Scenario eignet sich primär für neu zu erstellende RAP Objekte.
+Am Ende des Beipsiels wollenw wir ähnlich der Übung 3 eine kleine Anwendung haben mit der wir Aufträge erfassen und ändern können. Auch in diesem Beipsiel verwenden wir die Fiori Elements um ein schnelles Userinterface zu haben.
+## Übung 5.1 - Business Object View für Order anlegen
+1. Lege eine ganz gewöhnliche Data Definition (CDS) **ZCDX_I_ORDERS_M_XX** (Orders View) für die Datenbanktabelle **ZCDX_ORDER_00** an. Als Datenbankview sollte der Name **ZCDXIORDERSMXX** verwendet werden.
+  - .I. steht für Interface View
+  - .M. steht für Managed
+  - Naming Conventions: https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/8b8f9d8f3cb948b2841d6045a255e503.html 
+2. Bei der Order handelt es sich um die ROOT Entität. Daher müssen wir das Keyword **ROOT** nach dem DEFINE einfügen
+3. Bitte den Alias **Order** angeben
+4. Bei der Order gibt es auch ein Währungsfeld. Wir wollen hier später eine F4 Hilfe einbinden, daher müssen wir hier im CDS View eine Association zu dem vorhandenen CDS View I_CURRENCY anlegen. Zur Erinnerung, Associations werden **vor** den geschwungenen Klammern ergänzt
+```
+  association [0..1] to I_Currency       as _Currency  
+                     on $projection.Currency_Code    = _Currency.Currency
+```
+5. Bitte alle Felder der Datenbank und die Association auf die Währung einfügen. Einfach die CodeCompletion nach der geschwungenen Klammer starten.
+```
+    key order_nr, 
+    order_date,
+    customer,
+    currency_code,
+    
+    _Currency
+```
+6. Da wir hier eine Währung verwenden, kommt nun eine erste Annotation ins Spiel. Bitte folgende Annotation genau vor der Währung ergänzen. Aktivieren nicht vergessen.
+```
+@Semantics.currencyCode: true
+```
+7. Wenn ihr alles richtig gemacht habt, sollte der CDS View wie folgt aussehen.
+```
+@AbapCatalog.sqlViewName: 'ZCDXIORDERSM00'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #CHECK
+@EndUserText.label: 'Orders View'
+define root view ZCDX_I_ORDERS_M_00 as select from zcdx_order_00 
+  association [0..1] to I_Currency       as _Currency  
+                     on $projection.currency_code    = _Currency.Currency
+{
+
+  key order_nr,
+  order_date,
+  customer,
+  
+  @Semantics.currencyCode: true
+  currency_code,
+  
+  _Currency  
+}
+```
+Wie ihr sicher bemerkt habt, unterscheidet sich dieser Teil nicht vom unmanaged Scenario. Wir haben lediglich im Namen das Suffix "M" eingefügt, der Rest ist 1:1 gleich.

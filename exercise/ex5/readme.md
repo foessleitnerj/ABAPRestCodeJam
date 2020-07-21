@@ -242,10 +242,27 @@ ENDCLASS.
   ENDMETHOD.
 ``` 
 5. Nun sollte bei Anlagen oder Änderungen nur Partnernummern erlaubt sein, welche kleiner als 100 sind.
-6. Jetzt versucht es beim Datum valudateDates selber. Ein Datum soll immer kleiner oder gleich dem Tagesdatum sein. Bei einem Datum in der Zukunft soll eine Fehlermeldung ZCDX_MESSAGES/002 ausgegeben werden. - Und los!
-.
-.
-.
-.
-.
+6. Jetzt versucht es beim Datum valudateDates selber. Ein Datum soll immer kleiner oder gleich dem Tagesdatum sein. Bei einem Datum in der Zukunft soll eine Fehlermeldung ZCDX_MESSAGES/002 ausgegeben werden.
+   - Hinweis: SY-DATUM kann in der ABAP Cloud nicht verwendet werden. Dafür gibt es cl_abap_context_info=>get_system_date( )
+#
+7. Wenn ihr es richtig gemacht habt, sollte das Coding in etwa wie folgt aussehen:
+``` 
+  METHOD validateDates.
+       read entity zcdx_i_orders_m_00\\Order fields ( order_date ) with
+        value #( for <root_key> in keys (  %key = <root_key> ) )
+        result data(lt_orders).
 
+     loop at lt_orders ASSIGNING field-symbol(<order>).
+        if <order>-order_date > cl_abap_context_info=>get_system_date( ).
+           append value #( %key = <order>-%key
+                           order_nr = <order>-order_nr ) to failed.
+           append value #( %key = <order>-%key
+                           %msg = new_message(  id = 'ZCDX_MESSAGES'
+                                                number = '002'
+                                                severity = if_abap_behv_message=>severity-error )
+                           %element-order_date = if_abap_behv=>mk-on ) to reported.
+        endif.
+     endloop.
+
+  ENDMETHOD.
+``` 

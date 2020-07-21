@@ -267,5 +267,7 @@ define service ZCDX_SD_ORDERS_00 {
    - Der Binding Typ soll ODATA V2 - UI sein (ist so vorausgewählt)
 3. Rechts kann mit "Activate" das Service aktiviert werden. Dauert ein paar Sekunden
 4. Dann das Objekt "Orders" auswählen und "Preview" drücken ... und beten!
-
+#
+#
+#
    

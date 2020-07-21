@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <SRVD>
-    <NAME>ZCDX_SD_ORDERS_00</NAME>
+    <NAME>ZCDX_SD_ORDERS_M_00</NAME>
     <TYPE>SRVD/SRV</TYPE>
-    <DESCRIPTION>Service Definition for Orders</DESCRIPTION>
+    <DESCRIPTION>Service Definition for Order</DESCRIPTION>
     <LANGUAGE>EN</LANGUAGE>
     <LINKS>
      <item>
@@ -13,11 +13,11 @@
        <UNDEFINED_ATTRIBUTES>
         <item>
          <NAME>etag</NAME>
-         <TEXT>19710401000000001text/plain_2jH8lj+sXwbaSo0k/iPYWam3sHY=</TEXT>
+         <TEXT>19710401000000001text/plain_WOGqtaO6nKQpshM5DC2R60PbSCQ=</TEXT>
         </item>
        </UNDEFINED_ATTRIBUTES>
       </COMMON_ATTRIBUTES>
-      <HREF>./zcdx_sd_orders_00/source/main</HREF>
+      <HREF>./zcdx_sd_orders_m_00/source/main</HREF>
       <REL>http://www.sap.com/adt/relations/source</REL>
       <TYPE>text/plain</TYPE>
       <TITLE>Source Content</TITLE>
@@ -30,19 +30,19 @@
         </item>
        </UNDEFINED_ATTRIBUTES>
       </COMMON_ATTRIBUTES>
-      <HREF>./zcdx_sd_orders_00/source/main</HREF>
+      <HREF>./zcdx_sd_orders_m_00/source/main</HREF>
       <REL>http://www.sap.com/adt/relations/source</REL>
       <TYPE>text/html</TYPE>
       <TITLE>Source Content (HTML)</TITLE>
      </item>
      <item>
-      <HREF>./zcdx_sd_orders_00/source/main/versions</HREF>
+      <HREF>./zcdx_sd_orders_m_00/source/main/versions</HREF>
       <REL>http://www.sap.com/adt/relations/versions</REL>
       <TITLE>Historic versions</TITLE>
      </item>
     </LINKS>
     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
-    <SOURCE_URI>./zcdx_sd_orders_00/source/main</SOURCE_URI>
+    <SOURCE_URI>./zcdx_sd_orders_m_00/source/main</SOURCE_URI>
     <SOURCE_TYPE>ABAP_SOURCE</SOURCE_TYPE>
     <SOURCE_ORIGIN_DESCRIPTION>ABAP Development Tools</SOURCE_ORIGIN_DESCRIPTION>
     <SRVD_SOURCE_TYPE>S</SRVD_SOURCE_TYPE>

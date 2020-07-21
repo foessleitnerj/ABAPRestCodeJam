@@ -1,0 +1,31 @@
+@Metadata.layer: #CORE
+annotate view ZCDX_C_ORDERS_M_00
+    with 
+{
+  @UI.facet: [ { id:            'OrderNumber',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Order',
+                 position:      10 }]
+
+  @UI: { lineItem:       [ { position: 10, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 10 } ], 
+         selectionField: [ { position: 10 } ] }
+  OrderNumber;
+
+  @UI: { lineItem:       [ { position: 20, 
+                             importance: #MEDIUM } ], 
+         identification: [ { position: 20 } ], 
+         selectionField: [ { position: 20 } ] }
+  OrderDate;
+
+  @UI: { lineItem:       [ { position: 30, 
+                             importance: #HIGH } ], 
+         identification: [ { position: 30 } ] }
+  Customer;
+
+  @UI: { identification: [ { position: 40 } ]}
+  CurrencyCode;
+    
+}

@@ -4,13 +4,13 @@
   <asx:values>
    <SRVB>
     <METADATA>
-     <NAME>ZCDX_UI_PRODUCTS_M_00</NAME>
+     <NAME>ZCDX_UI_C_ORDERS_M_00</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>Service Binding for Products</DESCRIPTION>
+     <DESCRIPTION>Service Binding for Order</DESCRIPTION>
      <LANGUAGE>EN</LANGUAGE>
      <LINKS>
       <item>
-       <HREF>/sap/bc/adt/businessservices/odatav2/ZCDX_UI_PRODUCTS_M_00</HREF>
+       <HREF>/sap/bc/adt/businessservices/odatav2/ZCDX_UI_C_ORDERS_M_00</HREF>
        <REL>http://www.sap.com/categories/odatav2</REL>
        <TYPE>application/vnd.sap.adt.businessservices.odatav2.v2+xml</TYPE>
        <TITLE>ODATAV2</TITLE>
@@ -26,27 +26,27 @@
     </METADATA>
     <CONTENT>
      <BIND_TYPE_IMPL>
-      <NAME>ZCDX_UI_PRODUCTS_M_00</NAME>
+      <NAME>ZCDX_UI_C_ORDERS_M_00</NAME>
      </BIND_TYPE_IMPL>
      <BIND_TYPE>ODATA</BIND_TYPE>
      <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
      <SERVICES>
       <item>
-       <SERVICE_NAME>ZCDX_UI_PRODUCTS_M_00</SERVICE_NAME>
+       <SERVICE_NAME>ZCDX_UI_C_ORDERS_M_00</SERVICE_NAME>
        <SERVICE_CONTENT>
         <item>
          <SERVICE_VERSION>0001</SERVICE_VERSION>
          <SRVD_REF>
-          <URI>/sap/bc/adt/ddic/srvd/sources/zcdx_sd_products_m_00</URI>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zcdx_sd_orders_m_00</URI>
           <TYPE>SRVD/SRV</TYPE>
-          <NAME>ZCDX_SD_PRODUCTS_M_00</NAME>
+          <NAME>ZCDX_SD_ORDERS_M_00</NAME>
          </SRVD_REF>
         </item>
        </SERVICE_CONTENT>
       </item>
      </SERVICES>
     </CONTENT>
-    <REPAIR>true</REPAIR>
+    <PUBLISHED>true</PUBLISHED>
    </SRVB>
   </asx:values>
  </asx:abap>

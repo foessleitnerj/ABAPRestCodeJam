@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Order'
+define service ZCDX_SD_ORDERS_M_00 {
+  expose ZCDX_C_ORDERS_M_00 as Orders;
+}

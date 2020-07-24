@@ -1,8 +1,8 @@
 # Cadaxo ABAPRest Virtual CodeJam
-Übungen für eine ca. 3 stündige ABAPRest CodeJam
+Übungen für eine ca. 6 stündige ABAPRest CodeJam
 
 ## Überblick
-In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in the Cloud beschäftigen. Die ersten beiden Übungen helfen uns beim Einstieg, die dritte Übung ist dann eine ABAPRest Anwendung.
+In den nächsten 6 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in the Cloud beschäftigen. Die ersten beiden Übungen helfen uns beim Einstieg, die dritte Übung ist dann eine ABAPRest unmanaged Anwendung.
 
 ## Vorbereitungen
 - ABAP Development Tools sind installiert und auf dem aktuellsten Stand
@@ -13,4 +13,4 @@ In den nächsten 3 Stunden werden wir uns eingehender mit ABAPRest bzw. ABAP in 
 
 * [Übung 1 - Paket anlegen](exercise/ex1/README.md)
 * [Übung 2 - HTTP Service](exercise/ex2/README.md)
-* [Übung 3 - ABAPRestful Managed Object](exercise/ex3/readme.md)
+* [Übung 3 - ABAPRestful Unmanaged Object](exercise/ex3/readme.md)
